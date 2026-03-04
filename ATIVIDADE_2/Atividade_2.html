@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material de Estudo - Tipos de Redes</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:#f4f6fb;
+}
+
+header{
+    background:#0d47a1;
+    color:white;
+    padding:25px;
+    text-align:center;
+}
+
+nav{
+    background:#1565c0;
+    padding:10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+section{
+    background:white;
+    margin:20px;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    color:#0d47a1;
+}
+
+img{
+    width:100%;
+    max-width:400px;
+    display:block;
+    margin:15px auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+table, th, td{
+    border:1px solid #ccc;
+}
+
+th{
+    background:#1565c0;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    text-align:center;
+}
+
+form input, form select, form textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom:15px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+button{
+    background:#0d47a1;
+    color:white;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#08306b;
+}
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+input[type="radio"] {
+    width: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Material de Estudo Digital</h1>
+<p>Classificação dos Tipos de Redes de Computadores</p>
+</header>
+
+<nav>
+<a href="#pan">PAN</a>
+<a href="#lan">LAN</a>
+<a href="#wlan">WLAN</a>
+<a href="#can">CAN</a>
+<a href="#man">MAN</a>
+<a href="#wan">WAN</a>
+<a href="#tabela">Tabela Comparativa</a>
+<a href="#avaliacao">Avaliação</a>
+</nav>
+
+<section>
+<h2>📌 O que são Redes de Computadores?</h2>
+<p>
+Redes de computadores permitem a comunicação entre dispositivos para compartilhamento
+de dados, internet, impressoras e outros recursos. Elas são classificadas de acordo
+com sua área de cobertura geográfica.
+</p>
+</section>
+
+<section id="pan">
+<h2>PAN (Personal Area Network)</h2>
+<p>Rede de curtíssima distância usada para conectar dispositivos pessoais.</p>
+<ul>
+<li>Alcance: até 10 metros</li>
+<li>Exemplo: Bluetooth</li>
+</ul>
+<img src="PAN.jpg" alt="">
+</section>
+
+<section id="lan">
+<h2>LAN (Local Area Network)</h2>
+<p>Rede local usada em casas, escolas e empresas.</p>
+<ul>
+<li>Alta velocidade</li>
+<li>Área limitada</li>
+</ul>
+<img src="LAN.jpg" alt="Exemplo de LAN">
+</section>
+
+<section id="wlan">
+<h2>WLAN (Wireless LAN)</h2>
+<p>É uma LAN sem fio que utiliza tecnologia Wi-Fi.</p>
+<ul>
+<li>Não usa cabos</li>
+<li>Maior mobilidade</li>
+</ul>
+<img src="WLAN.jpg" alt="Exemplo de WLAN">
+</section>
+
+<section id="can">
+<h2>CAN (Campus Area Network)</h2>
+<p>Interliga prédios dentro de um campus ou instituição.</p>
+<ul>
+<li>Maior que uma LAN</li>
+<li>Exemplo: universidade</li>
+</ul>
+<img src="CAN.jpg" alt="Exemplo de CAN">
+</section>
+
+<section id="man">
+<h2>MAN (Metropolitan Area Network)</h2>
+<p>Rede que cobre uma cidade inteira.</p>
+<ul>
+<li>Interliga várias LANs</li>
+<li>Exemplo: rede urbana de internet</li>
+</ul>
+<img src="MAN.jpg" alt="Exemplo de MAN">
+</section>
+
+<section id="wan">
+<h2>WAN (Wide Area Network)</h2>
+<p>Rede de longa distância que conecta países e continentes.</p>
+<ul>
+<li>Maior alcance geográfico</li>
+<li>Exemplo: Internet</li>
+</ul>
+<img src="WAN.jpg" alt="Exemplo de WAN">
+</section>
+
+<section id="tabela">
+<h2>📊 Tabela Comparativa</h2>
+
+<table>
+<tr>
+<th>Tipo</th>
+<th>Alcance</th>
+<th>Exemplo</th>
+</tr>
+
+<tr>
+<td>PAN</td>
+<td>Poucos metros</td>
+<td>Bluetooth</td>
+</tr>
+
+<tr>
+<td>LAN</td>
+<td>Prédio / Casa</td>
+<td>Rede de escritório</td>
+</tr>
+
+<tr>
+<td>WLAN</td>
+<td>Prédio (sem fio)</td>
+<td>Wi-Fi</td>
+</tr>
+
+<tr>
+<td>CAN</td>
+<td>Campus</td>
+<td>Universidade</td>
+</tr>
+
+<tr>
+<td>MAN</td>
+<td>Cidade</td>
+<td>Rede urbana</td>
+</tr>
+
+<tr>
+<td>WAN</td>
+<td>Países / Continentes</td>
+<td>Internet</td>
+</tr>
+
+</table>
+</section>
+
+<section id="avaliacao">
+<h2>📝 Avaliação do Material</h2>
+
+<form>
+
+<label>Seu nome:</label>
+<input type="text" required>
+
+<label>Você entendeu o conteúdo?</label><br>
+<input type="radio" name="entendimento" value="sim" required>
+<label>Entendi!</label><br>
+<input type="radio" name="entendimento" value="parcial">
+<label>Entendi parcialmente</label><br>
+<input type="radio" name="entendimento" value="nao">
+<label>Não entendi</label><br><br>
+
+<label>Qual rede você achou mais interessante?</label>
+<select required>
+<option value="">Selecione</option>
+<option>PAN</option>
+<option>LAN</option>
+<option>WLAN</option>
+<option>CAN</option>
+<option>MAN</option>
+<option>WAN</option>
+</select>
+
+<label>De 0 a 10, qual nota você dá para o material?</label>
+<input type="number" min="0" max="10" required>
+
+<label>Sugestões de melhoria:</label>
+<textarea rows="4"></textarea>
+
+<button type="submit">Enviar Avaliação</button>
+
+</form>
+</section>
+
+<footer>
+Desenvolvido por Amanda Neves - Engenharia de Software
+</footer>
+
+</body>
+</html>
