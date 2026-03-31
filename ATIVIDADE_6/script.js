@@ -6,7 +6,7 @@ const estados = {
     comida: "comida.png",
     comendo: "bichinho_comendo.png",
     feliz: "criatura_feliz.png",
-    bravo: "criatura_brava.png",
+    bravo: "Criatura_brava.png",
     morto: "criatura_morta.png",
 }
 
