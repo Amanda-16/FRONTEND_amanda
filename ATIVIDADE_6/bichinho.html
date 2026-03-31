@@ -1,0 +1,50 @@
+<html lang="pt-br"
+<head>
+    <meta charset="UTF-8">
+    <title>Meu bichinho</title>
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            background-size: cover;       /* cobre a tela toda */
+            background-position: center;  /* centraliza */
+            background-repeat: no-repeat; /* não repete */
+            transition: background 0.5s ease;
+            
+            margin: 0;
+            height: 100vh;
+
+            #bicho {
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            #btn {
+                position: absolute;
+                bottom: 50px;
+            }
+            transition: background-image 0.8s ease-in-out;
+}
+        
+        img {
+            width: 200px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <img id="bicho" src="criaturinha.png">
+    <img id="btn" src="comida.png" onclick="alimentar()"/>
+</body>
+
+<script src="script.js"></script>
+</html>
