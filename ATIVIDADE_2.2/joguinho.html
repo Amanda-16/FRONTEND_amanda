@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Context</title>
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Segoe UI,sans-serif;
+min-height:100vh;
+background:
+radial-gradient(circle at top left,#7c3aed55,transparent 35%),
+radial-gradient(circle at bottom right,#06b6d455,transparent 35%),
+#080812;
+color:white;
+}
+.app{
+max-width:800px;
+margin:auto;
+padding:30px;
+}
+.header{
+text-align:center;
+margin-bottom:25px;
+}
+.title{
+font-size:3rem;
+font-weight:800;
+background:linear-gradient(90deg,#06b6d4,#7c3aed,#ec4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.card{
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:22px;
+padding:20px;
+}
+input{
+width:100%;
+padding:16px;
+border-radius:15px;
+border:none;
+background:rgba(255,255,255,.08);
+color:white;
+font-size:18px;
+}
+.list{margin-top:20px;display:flex;flex-direction:column;gap:12px}
+.item{
+position:relative;
+overflow:hidden;
+border-radius:16px;
+padding:14px 18px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+}
+.fill{
+position:absolute;
+left:0;top:0;bottom:0;
+background:linear-gradient(90deg,#06b6d4,#7c3aed,#ec4899);
+opacity:.8;
+}
+.row{
+position:relative;
+display:flex;
+justify-content:space-between;
+font-weight:bold;
+}
+.win{
+margin-top:20px;
+padding:20px;
+border-radius:20px;
+background:linear-gradient(135deg,#7c3aed66,#ec489966);
+text-align:center;
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const {useState}=React;
+
+const PALAVRA="galaxia";
+
+const DIC={
+ galaxia:1,
+ universo:2,
+ estrela:5,
+ planeta:9,
+ astronomia:15,
+ cosmos:22,
+ satelite:35,
+ foguete:60,
+ lua:95,
+ espaco:140,
+ telescopio:230,
+ ciencia:500,
+ tecnologia:1200,
+ energia:3000,
+ oceano:8000,
+ casa:15000,
+ banana:40000
+};
+
+function App(){
+ const [txt,setTxt]=useState("");
+ const [hist,setHist]=useState([]);
+ const [win,setWin]=useState(false);
+
+ const rank=(p)=>{
+   p=p.toLowerCase().trim();
+   if(DIC[p]) return DIC[p];
+   let h=0;
+   for(let c of p) h=((h<<5)-h)+c.charCodeAt(0);
+   return Math.abs(h%45000)+1000;
+ };
+
+ const send=(e)=>{
+   e.preventDefault();
+   if(!txt.trim()||win) return;
+   const p=txt.toLowerCase().trim();
+   const r=rank(p);
+
+   const novo={p,r};
+   setHist(v=>[novo,...v].sort((a,b)=>a.r-b.r));
+
+   if(r===1) setWin(true);
+   setTxt("");
+ };
+
+ const largura=(r)=>{
+   return Math.max(5,100-(Math.log(r)/Math.log(50000))*100);
+ };
+
+ return(
+ <div className="app">
+   <div className="header">
+     <div className="title">NEON CONTEXT</div>
+     <p>Descubra a palavra secreta do universo.</p>
+   </div>
+
+   <div className="card">
+      <form onSubmit={send}>
+        <input
+          value={txt}
+          onChange={e=>setTxt(e.target.value)}
+          placeholder="Digite uma palavra..."
+        />
+      </form>
+
+      {win &&
+      <div className="win">
+       <h2>🏆 Você venceu!</h2>
+       <p>A palavra era <b>{PALAVRA}</b>.</p>
+      </div>
+      }
+
+      <div className="list">
+      {hist.map((i,k)=>
+       <div className="item" key={k}>
+        <div className="fill" style={{width:largura(i.r)+'%'}}></div>
+        <div className="row">
+          <span>{i.p}</span>
+          <span>#{i.r}</span>
+        </div>
+       </div>
+      )}
+      </div>
+   </div>
+ </div>
+ )
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
